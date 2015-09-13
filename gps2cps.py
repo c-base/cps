@@ -45,6 +45,8 @@ def convert3(latitude, longitude):
     distance_zero = haversine(ANTENNA[0], longitude, latitude, longitude)
     angle = degrees(acos(distance_zero / distance_antenna)) - 7.675214
 
+    if distance_antenna > 825:
+        print('Warning! Position is outside of c-base spacestation. Remember to were your space suit!')
     return 'c3c%.2fc%.2fc0' % (angle, distance_antenna)
 
 
