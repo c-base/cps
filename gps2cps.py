@@ -43,7 +43,7 @@ def haversine(latitude1, longitude1, latitude2, longitude2):
 def convert3(latitude, longitude):
     distance_antenna = haversine(ANTENNA[0], ANTENNA[1], latitude, longitude)
     distance_zero = haversine(ANTENNA[0], longitude, latitude, longitude)
-    angle = degrees(acos(distance_zero / distance_antenna))
+    angle = degrees(acos(distance_zero / distance_antenna)) - 7.675214
 
     return 'c3c%.2fc%.2fc0' % (angle, distance_antenna)
 
